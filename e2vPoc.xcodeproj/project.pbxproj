@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A67C245B255CA2F800067D9F /* e2vPocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C245A255CA2F800067D9F /* e2vPocApp.swift */; };
+		A67C245D255CA2F800067D9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C245C255CA2F800067D9F /* ContentView.swift */; };
+		A67C245F255CA2FE00067D9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67C245E255CA2FE00067D9F /* Assets.xcassets */; };
+		A67C2462255CA2FE00067D9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67C2461255CA2FE00067D9F /* Preview Assets.xcassets */; };
+		A67C2470255CA39400067D9F /* AzureCommunication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67C246F255CA39400067D9F /* AzureCommunication.framework */; };
+		A67C2471255CA39400067D9F /* AzureCommunication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A67C246F255CA39400067D9F /* AzureCommunication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A67C2473255CA3A800067D9F /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67C2472255CA3A800067D9F /* AzureCore.framework */; };
+		A67C2474255CA3A800067D9F /* AzureCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A67C2472255CA3A800067D9F /* AzureCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A67C24B32564741A00067D9F /* AzureCommunicationCalling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67C24B22564741A00067D9F /* AzureCommunicationCalling.framework */; };
+		A67C24B42564741A00067D9F /* AzureCommunicationCalling.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A67C24B22564741A00067D9F /* AzureCommunicationCalling.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A67C246E255CA37700067D9F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A67C2474255CA3A800067D9F /* AzureCore.framework in Embed Frameworks */,
+				A67C24B42564741A00067D9F /* AzureCommunicationCalling.framework in Embed Frameworks */,
+				A67C2471255CA39400067D9F /* AzureCommunication.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A67C2457255CA2F800067D9F /* e2vPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = e2vPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67C245A255CA2F800067D9F /* e2vPocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e2vPocApp.swift; sourceTree = "<group>"; };
+		A67C245C255CA2F800067D9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A67C245E255CA2FE00067D9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A67C2461255CA2FE00067D9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A67C2463255CA2FE00067D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67C246F255CA39400067D9F /* AzureCommunication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureCommunication.framework; path = "../oneMoreTime/azure-sdk-for-ios/build/Release-iphonesimulator/AzureCommunication.framework"; sourceTree = "<group>"; };
+		A67C2472255CA3A800067D9F /* AzureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureCore.framework; path = "../oneMoreTime/azure-sdk-for-ios/build/Release-iphonesimulator/AzureCore.framework"; sourceTree = "<group>"; };
+		A67C24B22564741A00067D9F /* AzureCommunicationCalling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureCommunicationCalling.framework; path = ../../../Downloads/AzureCommunicationCalling.framework/AzureCommunicationCalling.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A67C2454255CA2F800067D9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67C2473255CA3A800067D9F /* AzureCore.framework in Frameworks */,
+				A67C24B32564741A00067D9F /* AzureCommunicationCalling.framework in Frameworks */,
+				A67C2470255CA39400067D9F /* AzureCommunication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A67C244E255CA2F800067D9F = {
+			isa = PBXGroup;
+			children = (
+				A67C2459255CA2F800067D9F /* e2vPoc */,
+				A67C2458255CA2F800067D9F /* Products */,
+				A67C246A255CA37700067D9F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A67C2458255CA2F800067D9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A67C2457255CA2F800067D9F /* e2vPoc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A67C2459255CA2F800067D9F /* e2vPoc */ = {
+			isa = PBXGroup;
+			children = (
+				A67C245A255CA2F800067D9F /* e2vPocApp.swift */,
+				A67C245C255CA2F800067D9F /* ContentView.swift */,
+				A67C245E255CA2FE00067D9F /* Assets.xcassets */,
+				A67C2463255CA2FE00067D9F /* Info.plist */,
+				A67C2460255CA2FE00067D9F /* Preview Content */,
+			);
+			path = e2vPoc;
+			sourceTree = "<group>";
+		};
+		A67C2460255CA2FE00067D9F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A67C2461255CA2FE00067D9F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A67C246A255CA37700067D9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A67C24B22564741A00067D9F /* AzureCommunicationCalling.framework */,
+				A67C2472255CA3A800067D9F /* AzureCore.framework */,
+				A67C246F255CA39400067D9F /* AzureCommunication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A67C2456255CA2F800067D9F /* e2vPoc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A67C2466255CA2FE00067D9F /* Build configuration list for PBXNativeTarget "e2vPoc" */;
+			buildPhases = (
+				A67C2453255CA2F800067D9F /* Sources */,
+				A67C2454255CA2F800067D9F /* Frameworks */,
+				A67C2455255CA2F800067D9F /* Resources */,
+				A67C246E255CA37700067D9F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = e2vPoc;
+			productName = e2vPoc;
+			productReference = A67C2457255CA2F800067D9F /* e2vPoc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A67C244F255CA2F800067D9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					A67C2456255CA2F800067D9F = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = A67C2452255CA2F800067D9F /* Build configuration list for PBXProject "e2vPoc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A67C244E255CA2F800067D9F;
+			productRefGroup = A67C2458255CA2F800067D9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A67C2456255CA2F800067D9F /* e2vPoc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A67C2455255CA2F800067D9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67C2462255CA2FE00067D9F /* Preview Assets.xcassets in Resources */,
+				A67C245F255CA2FE00067D9F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A67C2453255CA2F800067D9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67C245D255CA2F800067D9F /* ContentView.swift in Sources */,
+				A67C245B255CA2F800067D9F /* e2vPocApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A67C2464255CA2FE00067D9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A67C2465255CA2FE00067D9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A67C2467255CA2FE00067D9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"e2vPoc/Preview Content\"";
+				DEVELOPMENT_TEAM = K55YC3M5J6;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/rpteam/shenche2/scratch/oneMoreTime/azure-sdk-for-ios/build/Release-iphonesimulator",
+					/Users/rpteam/Downloads/AzureCommunicationCalling.framework,
+				);
+				INFOPLIST_FILE = e2vPoc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rpteam.e2vPoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A67C2468255CA2FE00067D9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"e2vPoc/Preview Content\"";
+				DEVELOPMENT_TEAM = K55YC3M5J6;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/rpteam/shenche2/scratch/oneMoreTime/azure-sdk-for-ios/build/Release-iphonesimulator",
+					/Users/rpteam/Downloads/AzureCommunicationCalling.framework,
+				);
+				INFOPLIST_FILE = e2vPoc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rpteam.e2vPoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A67C2452255CA2F800067D9F /* Build configuration list for PBXProject "e2vPoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67C2464255CA2FE00067D9F /* Debug */,
+				A67C2465255CA2FE00067D9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A67C2466255CA2FE00067D9F /* Build configuration list for PBXNativeTarget "e2vPoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67C2467255CA2FE00067D9F /* Debug */,
+				A67C2468255CA2FE00067D9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A67C244F255CA2F800067D9F /* Project object */;
+}
