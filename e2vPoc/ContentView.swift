@@ -11,13 +11,73 @@ import AVFoundation
 
 public class CallObserver: NSObject, CallAgentDelegate {
     private var _view: ContentView
-    init(_ view: ContentView) {
+    private var cli: CallClient
+//    private var deviceManager: DeviceManager
+    init(_ view: ContentView, client: CallClient) {
         _view = view
+        cli = client
+//        deviceManager = nil
     }
+    
+//    private var owner:ContentView
+//    init(_ view:ContentView) {
+//        owner = view
+//    }
     
     public func onCallsUpdated(_ callAgent: CallAgent!, args: CallsUpdatedEventArgs!) {
         print("CALL UPDATED");
+        
+        
+        for call in args.addedCalls {
+            if (call.isIncoming) {
+                
+                call.accept(options: AcceptCallOptions(), completionHandler: { error in
+                    
+                })
+                print("INCOMING CALL")
+                
+                cli.getDeviceManager(completionHandler: { (deviceManager, error) in
+                    if error == nil {
+                        var deviceManager = deviceManager!
+                        
+                        print(deviceManager.getCameraList()![0].name)
+                    } else {
+                        print("unable to get devicemanager")
+                    }
+                })
+                
+                
+                //todo 2.3
+                for participant in call.remoteParticipants {
+                    for stream in participant.videoStreams {
+                        if (stream.isAvailable) {
+                            print("STREAM AVAILIBLE")
+
+                        }
+                    }
+                }
+            }
+        }
+
+        
+        
+        
+        
+        
     }
+//        args.addedCalls?.forEach { call in
+//                    if (call.isIncoming) {
+//                        self.owner.incomingCallCaller = call
+//                        self.owner.isIncomingCall = true
+//                        self.owner.placeCallButtonAction = "AnswerIncoming"
+//                    }
+//                }
+//                let removedCalls = args.removedCalls
+//                if (removedCalls != nil && removedCalls!.count > 0) {
+//                    self.owner.isIncomingCall = false
+//                    self.owner.placeCallButtonAction = "StartOutgoing"
+//                }
+//    }
 }
 
 struct ContentView: View {
@@ -25,6 +85,7 @@ struct ContentView: View {
     @State var callClient: CallClient?
     @State var callAgent: CallAgent?
     @State var call: Call?
+    @State var callObserver: CallObserver?
 
     var body: some View {
         NavigationView {
@@ -44,9 +105,9 @@ struct ContentView: View {
             // Initialize call agent
             var userCredential: CommunicationUserCredential?
             // Skype Token
-            var userToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEwMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDU2MzQ3NTUsImV4cCI6MTYwNTcyMTE1NSwic2t5cGVpZCI6InRlYW1zdmlzaXRvcjo4ODU2YzJkMmM3ZDQ0ZWZhODkzZDI1YmY5ZWQyNDE1YyIsInNjcCI6NzcyLCJjc2kiOiIxNjA1NjM0NzU1IiwicmduIjoiYW1lciIsInByb2R1Y3QiOiJvYyJ9.hIBp2i60YcS0s3cLj4-wkPOC6DhT40xOWBoxhCLinC28AiZ-_WOfgGKT1oJ8eBsHSJRb4Lkx94gviv-0yxjInKrNBFcY_6NDji3o8idrtnaQ8bjUlrV8rmkw1h4eH2J3bK3crgZCRmi2eu0mrdtgV3ZgHXB2DcsPkkMhwAaFmPPmf-0XJM74HmtpQFzWH9u2BCvNt8GyWGbB22a84O1PiNRmVFfzqFGSzSeTpvv0D5lG_J-nUu8GS75HKC-xHBCEkcrJbPUkl1GLH5xyr1JVOzYi0bcN2y2S29L8ovkBX6UVGhZfv_1Lw14rEm067X9NjjW2LLdtKOY8TpDcgZEUug"
+//            var userToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEwMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDU2MzQ3NTUsImV4cCI6MTYwNTcyMTE1NSwic2t5cGVpZCI6InRlYW1zdmlzaXRvcjo4ODU2YzJkMmM3ZDQ0ZWZhODkzZDI1YmY5ZWQyNDE1YyIsInNjcCI6NzcyLCJjc2kiOiIxNjA1NjM0NzU1IiwicmduIjoiYW1lciIsInByb2R1Y3QiOiJvYyJ9.hIBp2i60YcS0s3cLj4-wkPOC6DhT40xOWBoxhCLinC28AiZ-_WOfgGKT1oJ8eBsHSJRb4Lkx94gviv-0yxjInKrNBFcY_6NDji3o8idrtnaQ8bjUlrV8rmkw1h4eH2J3bK3crgZCRmi2eu0mrdtgV3ZgHXB2DcsPkkMhwAaFmPPmf-0XJM74HmtpQFzWH9u2BCvNt8GyWGbB22a84O1PiNRmVFfzqFGSzSeTpvv0D5lG_J-nUu8GS75HKC-xHBCEkcrJbPUkl1GLH5xyr1JVOzYi0bcN2y2S29L8ovkBX6UVGhZfv_1Lw14rEm067X9NjjW2LLdtKOY8TpDcgZEUug"
             // ACS Token
-//            var userToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEwMiIsInR5cCI6IkpXVCJ9.eyJza3lwZWlkIjoiYWNzOjE3NTA1YWMzLWQ3ZTQtNDI1Ni1hOWUwLTk0NjgxMzM3Nzk0Y18wMDAwMDAwNi01OWJjLThhYTUtNjhhYi0xYzQ4MjIwMDM5NWIiLCJzY3AiOjE3OTIsImNzaSI6IjE2MDUxNDA5MzIiLCJpYXQiOjE2MDUxNDA5MzIsImV4cCI6MTYwNTIyNzMzMiwiYWNzU2NvcGUiOiJ2b2lwIiwicmVzb3VyY2VJZCI6IjE3NTA1YWMzLWQ3ZTQtNDI1Ni1hOWUwLTk0NjgxMzM3Nzk0YyJ9.Dk7zwjD3d08doEOAokRntwOZgkesIlqLzOi91Qvspg_lFPCh6xd4NuUjSY36f5y1tXouFlvJ-Crl5OBkprHFS4v6qYGET6ZmiJEnpA_Yozo9LyMuYEyhXt4vS4NndIoqGY7n-VUCk1SaG_7xREjPyLLxC5tfEpEZ0x2mMgAS_nN_dKICg8DyIE0R3fer1toFZ6kr_LMZMTC_5l_J_PLjrSgwl6v8NLOuKU8-5J4zmb0dK6c1gk0dXUzZCbLs8omluCed_Q5Z9gbyWI29qnmxdMEHmVEcogD9qfGzh4p7mIob7P-RgAE9urwUpl39tT5MEN0pzSGf4umUbEtU7neuOQ"
+            var userToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEwMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDc2MTIxNDgsImV4cCI6MTYwNzY5ODU0OCwic2t5cGVpZCI6InRlYW1zdmlzaXRvcjpiODc5ODVlYWM1MzE0YWM1YjEwMjJkMTViMTgzZjFlOCIsInNjcCI6NzcyLCJjc2kiOiIxNjA3NjEyMTQ4IiwicmduIjoiYW1lciIsInByb2R1Y3QiOiJvYyJ9.UPq0uNTKbg3YhGW4QDqdihylX1Q5qFDexRLwOAhMLkPvFoPgUApLugBl836FVBPZxp0O6cZT5U-wIQ5iWWs9Ff4RxG-XaFfPvCPiIr8j74e0oFNfFbFR_qkBeu8ApYx20dxLyEQpb9ITEPKcufX37K93ztm_1whUPTzSyzCkEhNE9KUuN0FAqtjFmfksgvntFsrM8ZUkUR66nSghHb8SheDUcerH4mTgXMSiacKc5yWQr2WytyOdWoPieV5GM5GMnIARxSqexHlbcEsIk1qfdaGXC0AecCB5u3D1q7uZYGT_zCdowUHtJxqQ6WZ8VKCx7136ghgSPYtg3YSj_4lHGA"
             do {
                 userCredential = try CommunicationUserCredential(token: userToken)
             } catch {
@@ -84,8 +145,11 @@ struct ContentView: View {
 //                self.call = self.callAgent?.join(with: groupCallContext, joinCallOptions: ACSJoinCallOptions())
                 
                 // Register events
-                self.callAgent?.delegate = CallObserver(self)
+
+//                self.callAgent?.delegate.onCallsUpdated?(self.callAgent, args: CallsUpdatedEventArgs)
             }
+            self.callObserver = CallObserver(self, client: callClient!)
+            self.callAgent?.delegate = self.callObserver
         }
     }
 
